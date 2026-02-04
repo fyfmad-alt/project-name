@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تفاصيل المشروع</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div>
+    <a href="index.html" class="link">← رجوع</a>
+    <h1 id="projectTitle">المشروع</h1>
+    <p id="projectMeta" class="muted small"></p>
+  </div>
+  <button id="btnResetProject" class="btn danger">حذف البيانات</button>
+</header>
+
+<main class="container">
+
+  <!-- إضافة عملية -->
+  <section class="card">
+    <h2>إضافة عملية مالية</h2>
+
+    <div class="form-grid">
+      <label class="field">
+        النوع
+        <select id="tKind">
+          <option value="income">دخل</option>
+          <option value="expense">مصروف</option>
+        </select>
+      </label>
+
+      <label class="field">
+        المبلغ
+        <input id="tAmount" type="number" min="0" />
+      </label>
+
+      <label class="field">
+        التاريخ
+        <input id="tDate" type="date" />
+      </label>
+
+      <label class="field">
+        ملاحظة
+        <input id="tNote" type="text" placeholder="اختياري" />
+      </label>
+    </div>
+
+    <button id="btnAddTx" class="btn">إضافة</button>
+    <p id="txMsg" class="muted small"></p>
+  </section>
+
+  <!-- الإحصائيات -->
+  <section class="grid">
+    <div class="card">
+      <h2>الإحصائيات</h2>
+
+      <div class="form-grid">
+        <label class="field">
+          الفترة
+          <select id="rangeType">
+            <option value="day">يومي</option>
+            <option value="week">أسبوعي</option>
+            <option value="month" selected>شهري</option>
+            <option value="year">سنوي</option>
+          </select>
+        </label>
+
+        <label class="field">
+          التاريخ
+          <input id="rangeDate" type="date" />
+        </label>
+      </div>
+
+      <div id="stats"></div>
+    </div>
+
+    <!-- المقارنة -->
+    <div class="card">
+      <h2>مقارنة شهرين</h2>
+
+      <div class="form-grid">
+        <label class="field">
+          الشهر الأول
+          <input id="mA" type="month" />
+        </label>
+
+        <label class="field">
+          الشهر الثاني
+          <input id="mB" type="month" />
+        </label>
+      </div>
+
+      <button id="btnCompare" class="btn">قارن</button>
+      <div id="compareBox"></div>
+    </div>
+  </section>
+
+  <!-- جدول العمليات -->
+  <section class="card">
+    <h2>سجل العمليات</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>التاريخ</th>
+            <th>النوع</th>
+            <th>المبلغ</th>
+            <th>ملاحظة</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="txTable"></tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

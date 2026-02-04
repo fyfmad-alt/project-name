@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Ledger</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div>
+    <h1>Project Ledger</h1>
+    <p class="muted small">إدارة وتحليل مشاريع بسيطة</p>
+  </div>
+  <button id="btnAddProject" class="btn">+ مشروع جديد</button>
+</header>
+
+<main class="container grid">
+  <!-- قائمة المشاريع -->
+  <section class="card">
+    <h2>المشاريع</h2>
+    <div id="projectsList" class="list"></div>
+  </section>
+
+  <!-- ملخص سريع -->
+  <section class="card">
+    <h2>الملخص</h2>
+    <div id="summaryBox">
+      <p class="muted">اختر مشروع لعرض الإحصائيات</p>
+    </div>
+  </section>
+</main>
+
+<!-- نافذة إضافة مشروع -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content card">
+    <h3>إضافة مشروع</h3>
+
+    <label class="field">
+      اسم المشروع
+      <input id="pName" type="text" placeholder="اسم المشروع" />
+    </label>
+
+    <label class="field">
+      نوع المشروع
+      <select id="pType">
+        <option>كوفي</option>
+        <option>مطعم</option>
+        <option>متجر</option>
+        <option>أخرى</option>
+      </select>
+    </label>
+
+    <div class="row">
+      <button id="btnSaveProject" class="btn">حفظ</button>
+      <button id="btnClose" class="btn ghost">إلغاء</button>
+    </div>
+
+    <p id="msg" class="muted small"></p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
